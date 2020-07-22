@@ -5,8 +5,8 @@ using System.Diagnostics;
 using System.IO;
 using System.Text;
 
-namespace LiveSplit.UnrealLoads.Games
-{
+ namespace LiveSplit.UnrealLoads.Games
+ {
     class ASeriesOfUnfortunateEvents : GameSupport
     {
         public override HashSet<string> GameNames => new HashSet<string>
@@ -15,12 +15,14 @@ namespace LiveSplit.UnrealLoads.Games
             "Lemony Snicket's A Series of Unfortunate Events (PC)",
             "Lemony Snicket's A Series of Unfortunate Events"
         };
+		
 		public override string MapExtension { get; } = ".unr";
+		
         public override HashSet<string> ProcessNames => new HashSet<string>
         {
             "game"
         };
     }
-}
+ }
 
 
