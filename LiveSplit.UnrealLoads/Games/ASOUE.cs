@@ -15,10 +15,12 @@ namespace LiveSplit.UnrealLoads.Games
             "Lemony Snicket's A Series of Unfortunate Events (PC)",
             "Lemony Snicket's A Series of Unfortunate Events"
         };
-
+		public override string MapExtension { get; } = ".unr";
         public override HashSet<string> ProcessNames => new HashSet<string>
         {
             "game"
         };
     }
 }
+
+
