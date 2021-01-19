@@ -1,6 +1,7 @@
 ﻿using LiveSplit.ComponentUtil;
 using System;
 using System.Collections.Generic;
+using System.Diagnostics;
 
 namespace LiveSplit.UnrealLoads.Games
 {
@@ -52,5 +53,24 @@ namespace LiveSplit.UnrealLoads.Games
 			"Lev5_Snare",
 			"Snapes_Office"
 		};
+
+		public override TimerAction[] OnDetach(Process game)
+		{
+			return new TimerAction[] { TimerAction.UnpauseGameTime };
+		}
+
+		public override TimerAction[] OnMapLoad(MemoryWatcherList watchers)
+		{
+			StringWatcher map = (StringWatcher)watchers["map"];
+			if (map != null)
+			{
+				if (!map.Changed && map.Current == "Lev_Tut1.unr")
+				{
+					return new TimerAction[] { TimerAction.Split };
+				}
+			}
+			
+			return new TimerAction[] { TimerAction.DoNothing };
+		}
 	}
 }
