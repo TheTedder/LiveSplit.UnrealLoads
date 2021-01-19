@@ -1,4 +1,6 @@
-﻿using System.Collections.Generic;
+﻿using LiveSplit.ComponentUtil;
+using System;
+using System.Collections.Generic;
 
 namespace LiveSplit.UnrealLoads.Games
 {
@@ -17,7 +19,7 @@ namespace LiveSplit.UnrealLoads.Games
 			"hp"
 		};
 
-		public override HashSet<string> Maps => new HashSet<string>
+		public override HashSet<string> Maps => new HashSet<string>(StringComparer.OrdinalIgnoreCase)
 		{
 			"Lev_Tut1",
 			"Lev_Tut1b",
