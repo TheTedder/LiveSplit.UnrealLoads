@@ -20,7 +20,7 @@ namespace LiveSplit.UnrealLoads.Games
 			"splintercell3"
 		};
 
-		public override HashSet<string> Maps { get; } = new HashSet<string>
+		public override HashSet<string> Maps { get; } = new HashSet<string>(StringComparer.OrdinalIgnoreCase)
 		{
 			"01_panama",
 			"02_cargoship",
