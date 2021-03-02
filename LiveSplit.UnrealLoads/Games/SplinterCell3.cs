@@ -11,7 +11,8 @@ namespace LiveSplit.UnrealLoads.Games
 		{
 			"Splinter Cell 3",
 			"Splinter Cell: Chaos Theory",
-			"Splinter Cell Chaos Theory"
+			"Splinter Cell Chaos Theory",
+			"Tom Clancy's Splinter Cell:Chaos Theory"
 		};
 
 		public override HashSet<string> ProcessNames { get; } = new HashSet<string>
