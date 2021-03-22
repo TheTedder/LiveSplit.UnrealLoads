@@ -33,6 +33,13 @@ namespace LiveSplit.UnrealLoads.Games
 
 		public virtual HashSet<string> Maps { get; } = new HashSet<string>();
 
+		/// <summary>
+		/// Maps not contained in <see cref="Maps"/> will be ignored and will not trigger a MapLoad event.
+		/// In the subsequent OnMapLoad event, the previous map parameter will be the last known map.
+		/// Unlisted maps are usually savegames. This should not be used if the map list is not complete because it may break some map exit autosplits.
+		/// </summary>
+		public virtual bool IgnoreUnlistedMaps => false;
+
 		public virtual LoadMapDetour GetNewLoadMapDetour() => new LoadMapDetour();
 
 		public virtual SaveGameDetour GetNewSaveGameDetour() => new SaveGameDetour();

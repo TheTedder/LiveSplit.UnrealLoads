@@ -20,6 +20,7 @@ namespace LiveSplit.UnrealLoads.Games
 			"hppoa"
 		};
 
+		public override bool IgnoreUnlistedMaps => true;
 		public override HashSet<string> Maps { get; } = new HashSet<string>(StringComparer.OrdinalIgnoreCase)
 		{
 			"hp3_adv1express",

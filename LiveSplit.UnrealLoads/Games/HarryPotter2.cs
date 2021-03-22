@@ -23,6 +23,8 @@ namespace LiveSplit.UnrealLoads.Games
 			"game"
 		};
 
+		public override bool IgnoreUnlistedMaps => true;
+
 		public override HashSet<string> Maps { get; } = new HashSet<string>(StringComparer.OrdinalIgnoreCase)
 		{
 			"Adv1Willow",

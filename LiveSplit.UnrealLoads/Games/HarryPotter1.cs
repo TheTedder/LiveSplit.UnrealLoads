@@ -20,6 +20,8 @@ namespace LiveSplit.UnrealLoads.Games
 			"hp"
 		};
 
+		public override bool IgnoreUnlistedMaps => true;
+
 		public override HashSet<string> Maps { get; } = new HashSet<string>(StringComparer.OrdinalIgnoreCase)
 		{
 			"Lev_Tut1",
