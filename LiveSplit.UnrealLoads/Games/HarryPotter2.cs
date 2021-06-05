@@ -98,6 +98,22 @@ namespace LiveSplit.UnrealLoads.Games
 			}
 		}
 
+		public override TimerAction[] OnMapLoad(MemoryWatcherList watchers)
+		{
+			var map = (StringWatcher)watchers["map"];
+
+			if (map != null)
+			{
+				if (map.Current.Equals("privetdr.unr", StringComparison.OrdinalIgnoreCase)
+					&& map.Old.Equals("privetdr.unr", StringComparison.OrdinalIgnoreCase))
+				{
+					return new TimerAction[] { TimerAction.Start };
+				}
+			}
+
+			return null;
+		}
+
 		public override TimerAction[] OnDetach(Process game)
 		{
 			return new TimerAction[] { TimerAction.UnpauseGameTime };
